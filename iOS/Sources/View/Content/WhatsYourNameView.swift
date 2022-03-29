@@ -14,7 +14,7 @@ struct WhatsYourNameView: View {
         
         VStack(alignment: .center, spacing: 67) {
             
-            Text("Who Are You?\n당신의 닉네임을 입력하세요")
+            Text("Who Are You?\n\n당신의 닉네임을 입력하세요")
                 .font(.title2)
                 .multilineTextAlignment(.center)
             
