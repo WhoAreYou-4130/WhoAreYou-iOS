@@ -11,13 +11,16 @@ import SwiftUI
 struct ChatView: View {
     
     @State var message : String = ""
+    let chat : ChatModel
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             
-            ScrollView {
+            GeometryReader { reader in
                 
+                ScrollView {
+                    getMessageView(viewWidth: reader.size.width)
+                }
             }
-            
             
             HStack {
                 TextField("입력해주세요", text: $message)
@@ -34,10 +37,31 @@ struct ChatView: View {
         
         
     }
+    let rows = [GridItem(.flexible(minimum: 10))]
+    
+    func getMessageView(viewWidth: CGFloat) -> some View {
+        LazyHGrid(rows: rows, spacing: 0) {
+            ForEach(chat.message) { message in
+                
+                let isReceived = message.type == .Received
+                
+                HStack {
+                    ZStack {
+                        
+                        Text(message.text)
+                    }
+                    .frame(width: viewWidth * 0.7, alignment: isReceived ? .leading : .trailing)
+                    .padding(.vertical)
+                    .background(Color.blue)
+                }
+                .frame(maxWidth: .infinity, alignment: isReceived ? .leading : .trailing)
+            }
+        }
+    }
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChatView(chat: ChatModel.sampleChat[0])
     }
 }

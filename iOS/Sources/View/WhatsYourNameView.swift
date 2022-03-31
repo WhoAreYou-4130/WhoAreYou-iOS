@@ -39,12 +39,11 @@ struct WhatsYourNameView: View {
                             .frame(maxWidth: 227, maxHeight: 40)
                             .foregroundColor(.init(hex: "8870FE"))
                         
-                        NavigationLink(destination: ChatView() .navigationBarHidden(true)) {
-                            
-                            Text("입장하기")
-                                .frame(maxWidth: 67, maxHeight: 26)
-                                .foregroundColor(.white)
-                        }
+//                        NavigationLink(destination: ChatView()) {
+//                            Text("입장하기")
+//                                .frame(maxWidth: 67, maxHeight: 26)
+//                                .foregroundColor(.white)
+//                        }
                     }
                 }
                 
