@@ -8,25 +8,22 @@
 
 import SwiftUI
 
-struct ChatModel : Identifiable {
-    var id = UUID().uuidString
+struct ChatModel {
     let person : Person
     var message : [Message]
     
 }
 
-struct Person : Identifiable {
-    let id = UUID()
+struct Person : Codable{
     let name : String
 }
 
-struct Message : Identifiable {
+struct Message : Codable {
     
-    enum MessageType {
+    enum MessageType : Codable {
         case Sent, Received
     }
     
-    let id = UUID()
     let date : Date
     let text : String
     let type : MessageType
