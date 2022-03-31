@@ -1,5 +1,5 @@
 //
-//  StartView.swift
+//  WhatsYourNameView.swift
 //  WhoAreYou
 //
 //  Created by 민도현 on 2022/03/29.
@@ -8,53 +8,54 @@
 
 import SwiftUI
 
-struct StartView: View {
-    @State var isAct : Bool = false
+struct WhatsYourNameView: View {
+    @State var yourName : String = ""
     var body: some View {
         NavigationView {
             
-            VStack(alignment: .center, spacing: 40) {
-                Image("WhoAreYou-text")
+            
+            VStack(alignment: .center, spacing: 67) {
                 
-                Image("WhoAreYou-logo")
-                
-                Text("Who Are You 는 익명의 상대와\n 편하게 대화할 수 있는\n 익명 채팅 서비스 입니다.")
-                    .frame(maxWidth: 375, maxHeight: 96)
+                Text("Who Are You?\n\n당신의 닉네임을 입력하세요")
                     .font(.title2)
-                //font 를 가운데로 정렬
                     .multilineTextAlignment(.center)
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 34)
+                        .stroke(Color.black, lineWidth: 1)
+                        .frame(maxWidth: 251, maxHeight: 40)
+                    
+                    TextField("닉네임 입력", text: $yourName)
+                        .frame(maxWidth: 251, maxHeight: 40)
+                        .multilineTextAlignment(.center)
+                }
                 
                 Button {
                     
                 } label: {
                     ZStack {
                         
-                        
                         RoundedRectangle(cornerRadius: 10)
                             .frame(maxWidth: 227, maxHeight: 40)
                             .foregroundColor(.init(hex: "8870FE"))
                         
-                        //back 버튼을 숨기기 위해 원하는 뷰 바로 뒤에 코드 추가
-                        NavigationLink( destination: WhatsYourNameView() .navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: ChatView() .navigationBarHidden(true)) {
                             
-                            Text("시작하기")
+                            Text("입장하기")
                                 .frame(maxWidth: 67, maxHeight: 26)
                                 .foregroundColor(.white)
                         }
-                        
                     }
-                    
                 }
+                
+                
             }
-
         }
-        .padding()
     }
 }
 
-
-struct StartView_Previews: PreviewProvider {
+struct WhatsYourNameView_Previews: PreviewProvider {
     static var previews: some View {
-        StartView()
+        WhatsYourNameView()
     }
 }
