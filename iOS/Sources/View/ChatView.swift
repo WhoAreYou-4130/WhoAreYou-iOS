@@ -13,50 +13,74 @@ struct ChatView: View {
     @State var message : String = ""
     let chat : ChatModel
     var body: some View {
-        VStack(spacing: 0) {
+        NavigationView {
             
-            GeometryReader { reader in
+            VStack(spacing: 0) {
                 
-                ScrollView {
-                    getMessageView(viewWidth: reader.size.width)
-                }
-            }
-            
-            HStack {
-                TextField("입력해주세요", text: $message)
-                
-                Button {
+                GeometryReader { reader in
                     
-                } label: {
-                    Image(systemName: "paperplane")
-                        .resizable()
-                        .frame(maxWidth: 28, maxHeight: 28)
+                    ScrollView {
+                        //                    getMessageView(viewWidth: reader.size.width)
+                    }
                 }
-            } .padding(.horizontal, 20)
-        }
-        
-        
-    }
-    let rows = [GridItem(.flexible(minimum: 10))]
-    
-    func getMessageView(viewWidth: CGFloat) -> some View {
-        LazyHGrid(rows: rows, spacing: 0) {
-            ForEach(chat.message) { message in
-                
-                let isReceived = message.type == .Received
                 
                 HStack {
-                    ZStack {
+                    TextField("입력해주세요", text: $message)
+                    
+                    Button {
                         
-                        Text(message.text)
+                    } label: {
+                        Image(systemName: "paperplane")
+                            .resizable()
+                            .frame(maxWidth: 28, maxHeight: 28)
                     }
-                    .frame(width: viewWidth * 0.7, alignment: isReceived ? .leading : .trailing)
-                    .padding(.vertical)
-                    .background(Color.blue)
-                }
-                .frame(maxWidth: .infinity, alignment: isReceived ? .leading : .trailing)
+                } .padding(.horizontal, 20)
             }
+            .navigationTitle("WhoAreYou")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    Button {
+                        
+                    } label: {
+                        ZStack {
+                            
+                            RoundedRectangle(cornerRadius: 5)
+                                .frame(width: 60, height: 26)
+                                .foregroundColor(Color.init(hex: "FF5252"))
+                            
+                            Text("퇴장")
+                                .foregroundColor(.white)
+                                
+                        }
+                        
+                    }
+                }
+            }
+            
         }
+        //        let rows = [GridItem(.flexible(minimum: 10))]
+        
+        //    func getMessageView(viewWidth: CGFloat) -> some View {
+        //        LazyHGrid(rows: rows, spacing: 0) {
+        //            ForEach(chat.message) { message in
+        //
+        //                let isReceived = message.type == .Received
+        //
+        //                HStack {
+        //                    ZStack {
+        //
+        //                        Text(message.text)
+        //                    }
+        //                    .frame(width: viewWidth * 0.7, alignment: isReceived ? .leading : .trailing)
+        //                    .padding(.vertical)
+        //                    .background(Color.blue)
+        //                }
+        //                .frame(maxWidth: .infinity, alignment: isReceived ? .leading : .trailing)
+        //            }
+        //        }
+        //    }
     }
 }
 
