@@ -36,6 +36,7 @@ class SocketViewModel : ObservableObject {
             print("Connected!")
         }
         
+        //updateMessage 라는 이벤트 이름으로 message 데이터를 송신
         socket?.emit("updateMessage", message )
         
         //이름이 updateMessage 로 emit 된 이벤트 수신
