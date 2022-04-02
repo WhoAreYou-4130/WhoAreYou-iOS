@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ChatView: View {
     
-    @State var message : String = ""
-    let chat : ChatModel
+    @StateObject var socket = SocketViewModel()
+
     var body: some View {
         NavigationView {
             
@@ -25,7 +25,8 @@ struct ChatView: View {
                 }
                 
                 HStack {
-                    TextField("입력해주세요", text: $message)
+                    TextEditor(text: $socket.message)
+                        .frame(maxWidth: .infinity, maxHeight: 28)
                     
                     Button {
                         
@@ -86,6 +87,6 @@ struct ChatView: View {
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(chat: ChatModel.sampleChat[0])
+        ChatView()
     }
 }
