@@ -10,7 +10,7 @@ import SwiftUI
 
 struct WhatsYourNameView: View {
     @StateObject var viewModel = SocketViewModel()
-    @State var yourName : String = ""
+    
     var body: some View {
         NavigationView {
             
@@ -32,7 +32,7 @@ struct WhatsYourNameView: View {
                 }
                 
                 Button {
-                    viewModel.yourName = yourName
+                    
                 } label: {
                     ZStack {
                         
@@ -44,6 +44,11 @@ struct WhatsYourNameView: View {
                             Text("입장하기")
                                 .frame(maxWidth: 67, maxHeight: 26)
                                 .foregroundColor(.white)
+                            
+//                                .onTapGesture {
+//                                    print("최형우 = \(viewModel.yourName)")
+//                                }
+                            
                         }
                     }
                 }
