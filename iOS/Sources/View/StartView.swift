@@ -48,6 +48,7 @@ struct StartView: View {
             }
 
         }
+        .navigationViewStyle(.stack)
         .padding()
     }
 }
