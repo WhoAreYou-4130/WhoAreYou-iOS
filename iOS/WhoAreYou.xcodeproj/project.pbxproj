@@ -19,6 +19,7 @@
 		DF44877D27F2F9F400EDD143 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44877C27F2F9F400EDD143 /* Color.swift */; };
 		DF44877F27F312FC00EDD143 /* WhatsYourNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44877E27F312FC00EDD143 /* WhatsYourNameView.swift */; };
 		DF44878127F51DB400EDD143 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44878027F51DB400EDD143 /* ChatView.swift */; };
+		DF68E67C27FA748600D55C02 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DF68E67B27FA748600D55C02 /* SocketIO */; };
 		DFAA872A27F5BB1600896344 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA872927F5BB1600896344 /* ChatModel.swift */; };
 		E5694FA0F69147B91A15528B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099EAA6002286FE494FCB9A0 /* Assets.xcassets */; };
 		E8F03229470D96AB6B1D9BC0 /* TargetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95F8A03E946C864547B5897 /* TargetApp.swift */; };
@@ -97,6 +98,7 @@
 			files = (
 				F558487992890AC96726C1D6 /* Service.framework in Frameworks */,
 				A2B870CB5B907CD86E01E0B8 /* ThirdPartyLib.framework in Frameworks */,
+				DF68E67C27FA748600D55C02 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +291,9 @@
 			dependencies = (
 			);
 			name = WhoAreYou;
+			packageProductDependencies = (
+				DF68E67B27FA748600D55C02 /* SocketIO */,
+			);
 			productName = WhoAreYou;
 			productReference = D08D5D058893954DDB01CFE5 /* WhoAreYou.app */;
 			productType = "com.apple.product-type.application";
@@ -334,6 +339,9 @@
 				en,
 			);
 			mainGroup = 5F4786A760855019580161A2;
+			packageReferences = (
+				DF68E67A27FA748600D55C02 /* XCRemoteSwiftPackageReference "socket" */,
+			);
 			productRefGroup = E4BC51CDF515B45C7673C52F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -466,7 +474,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Support/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,7 +575,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Support/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -640,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF68E67A27FA748600D55C02 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF68E67B27FA748600D55C02 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF68E67A27FA748600D55C02 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC81EBB5960EC9199DA2B4AA /* Project object */;
 }
