@@ -10,7 +10,9 @@ import SwiftUI
 
 struct ChatView: View {
     
-    @StateObject var socket = SocketViewModel()
+    @StateObject var viewModel = SocketViewModel()
+    @State var message : String = ""
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         NavigationView {
@@ -25,15 +27,17 @@ struct ChatView: View {
                 }
                 
                 HStack {
-                    TextEditor(text: $socket.message)
+                    TextEditor(text: $viewModel.message)
                         .frame(maxWidth: .infinity, maxHeight: 28)
                     
                     Button {
-                        
+                        print("obsubmit!")
+                        viewModel.message = message
                     } label: {
                         Image(systemName: "paperplane")
                             .resizable()
                             .frame(maxWidth: 28, maxHeight: 28)
+                        
                     }
                 } .padding(.horizontal, 20)
             }
@@ -53,6 +57,10 @@ struct ChatView: View {
                             
                             Text("퇴장")
                                 .foregroundColor(.white)
+                                .onTapGesture {
+                                    
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }
                                 
                         }
                         
