@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		68CA7301E7A7AA3C63C4AB7B /* TempSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0653AB5570B8EF305FA78 /* TempSource.swift */; };
 		800560CF9BE5B04DD7851D74 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 83F5EE0426CAA8216FF591A9 /* CombineMoya */; };
 		AE042A986F4AC6D07B42A12C /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = D6EBB851A5EAC1D460CB1BDF /* Swinject */; };
+		DF43A57F27F69336000C73A2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DF43A57E27F69336000C73A2 /* SocketIO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,7 @@
 			files = (
 				800560CF9BE5B04DD7851D74 /* CombineMoya in Frameworks */,
 				AE042A986F4AC6D07B42A12C /* Swinject in Frameworks */,
+				DF43A57F27F69336000C73A2 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +123,7 @@
 			packageProductDependencies = (
 				83F5EE0426CAA8216FF591A9 /* CombineMoya */,
 				D6EBB851A5EAC1D460CB1BDF /* Swinject */,
+				DF43A57E27F69336000C73A2 /* SocketIO */,
 			);
 			productName = ThirdPartyLib;
 			productReference = 7DC52CFF6683FA84E78694E9 /* ThirdPartyLib.framework */;
@@ -132,8 +135,6 @@
 		6AB1D2D9B77394C894B54FC7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 4CFA055D3A83A6FB27DEA8BF /* Build configuration list for PBXProject "ThirdPartyLib" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -147,6 +148,7 @@
 			packageReferences = (
 				24FD4FB34322ABCD23A82DBC /* XCRemoteSwiftPackageReference "Moya" */,
 				9530ADD000AE34EBAE546CAD /* XCRemoteSwiftPackageReference "Swinject" */,
+				DF43A57D27F69336000C73A2 /* XCRemoteSwiftPackageReference "socket" */,
 			);
 			productRefGroup = 99610B6746DED12D992F54AB /* Products */;
 			projectDirPath = "";
@@ -392,6 +394,14 @@
 				minimumVersion = 2.7.0;
 			};
 		};
+		DF43A57D27F69336000C73A2 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -402,6 +412,11 @@
 		D6EBB851A5EAC1D460CB1BDF /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Swinject;
+		};
+		DF43A57E27F69336000C73A2 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF43A57D27F69336000C73A2 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

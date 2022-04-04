@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct WhatsYourNameView: View {
-    @State var yourName : String = ""
+    @StateObject var viewModel = SocketViewModel()
+    
     var body: some View {
         NavigationView {
             
@@ -25,7 +26,7 @@ struct WhatsYourNameView: View {
                         .stroke(Color.black, lineWidth: 1)
                         .frame(maxWidth: 251, maxHeight: 40)
                     
-                    TextField("닉네임 입력", text: $yourName)
+                    TextField("닉네임 입력", text: $viewModel.yourName)
                         .frame(maxWidth: 251, maxHeight: 40)
                         .multilineTextAlignment(.center)
                 }
@@ -39,11 +40,15 @@ struct WhatsYourNameView: View {
                             .frame(maxWidth: 227, maxHeight: 40)
                             .foregroundColor(.init(hex: "8870FE"))
                         
-                        NavigationLink(destination: ChatView() .navigationBarHidden(true)) {
-                            
+                        NavigationLink(destination: ChatView() .navigationBarBackButtonHidden(true)) {
                             Text("입장하기")
                                 .frame(maxWidth: 67, maxHeight: 26)
                                 .foregroundColor(.white)
+                            
+                            //                                .onTapGesture {
+                            //                                    print("최형우 = \(viewModel.yourName)")
+                            //                                }
+                            
                         }
                     }
                 }

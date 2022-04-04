@@ -10,28 +10,86 @@ import SwiftUI
 
 struct ChatView: View {
     
+    @StateObject var viewModel = SocketViewModel()
     @State var message : String = ""
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
-        VStack {
+        NavigationView {
             
-            ScrollView {
+            VStack(spacing: 0) {
                 
+                GeometryReader { reader in
+                    
+                    ScrollView {
+                        //                    getMessageView(viewWidth: reader.size.width)
+                    }
+                }
+                
+                HStack {
+                    TextEditor(text: $message)
+                        .frame(maxWidth: .infinity, maxHeight: 28)
+                    
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "paperplane")
+                            .resizable()
+                            .frame(maxWidth: 28, maxHeight: 28)
+                        
+                    }
+                } .padding(.horizontal, 20)
+            }
+            .navigationTitle("WhoAreYou")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    Button {
+                        
+                    } label: {
+                        ZStack {
+                            
+                            RoundedRectangle(cornerRadius: 5)
+                                .frame(width: 60, height: 26)
+                                .foregroundColor(Color.init(hex: "FF5252"))
+                            
+                            Text("퇴장")
+                                .foregroundColor(.white)
+                                .onTapGesture {
+                                    
+                                    self.presentationMode.wrappedValue.dismiss()
+                                    
+                                }
+                                
+                        }
+                        
+                    }
+                }
             }
             
-            
-            HStack {
-                TextField("입력해주세요", text: $message)
-                
-                Button {
-                    
-                } label: {
-                    Image(systemName: "paperplane")
-                        .resizable()
-                        .frame(maxWidth: 28, maxHeight: 28)
-                }
-            } .padding(.horizontal, 20)
         }
+        //        let rows = [GridItem(.flexible(minimum: 10))]
         
+        //    func getMessageView(viewWidth: CGFloat) -> some View {
+        //        LazyHGrid(rows: rows, spacing: 0) {
+        //            ForEach(chat.message) { message in
+        //
+        //                let isReceived = message.type == .Received
+        //
+        //                HStack {
+        //                    ZStack {
+        //
+        //                        Text(message.text)
+        //                    }
+        //                    .frame(width: viewWidth * 0.7, alignment: isReceived ? .leading : .trailing)
+        //                    .padding(.vertical)
+        //                    .background(Color.blue)
+        //                }
+        //                .frame(maxWidth: .infinity, alignment: isReceived ? .leading : .trailing)
+        //            }
+        //        }
+        //    }
     }
 }
 

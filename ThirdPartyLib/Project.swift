@@ -7,7 +7,7 @@ let project = Project.dynamicFramework(
         .Moya,
         .Swinject
     ],
-    deploymentTarget: .iOS(targetVersion: "14.0", devices: [.iphone, .ipad]),
+    deploymentTarget: .iOS(targetVersion: "15.0", devices: [.iphone, .ipad]),
     dependencies: [
         .SPM.CombineMoya,
         .SPM.Swinject

@@ -14,10 +14,13 @@
 		A4FABF60D9B7F7F9794DADBB /* TargetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDE1AD34D16A713CACC651 /* TargetTest.swift */; };
 		C51DD24FE72984119BE126C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B269A995377EDB9E5E0B97B4 /* Preview Assets.xcassets */; };
 		DC0F212710CB0B8FC70FA3B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDE069E70D1B0BE8B93AF2A /* ContentView.swift */; };
+		DF43A58227F693EC000C73A2 /* SocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF43A58127F693EC000C73A2 /* SocketViewModel.swift */; };
 		DF44877927F2F9CA00EDD143 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44877827F2F9CA00EDD143 /* StartView.swift */; };
 		DF44877D27F2F9F400EDD143 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44877C27F2F9F400EDD143 /* Color.swift */; };
 		DF44877F27F312FC00EDD143 /* WhatsYourNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44877E27F312FC00EDD143 /* WhatsYourNameView.swift */; };
 		DF44878127F51DB400EDD143 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF44878027F51DB400EDD143 /* ChatView.swift */; };
+		DF68E67C27FA748600D55C02 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DF68E67B27FA748600D55C02 /* SocketIO */; };
+		DFAA872A27F5BB1600896344 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAA872927F5BB1600896344 /* ChatModel.swift */; };
 		E5694FA0F69147B91A15528B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 099EAA6002286FE494FCB9A0 /* Assets.xcassets */; };
 		E8F03229470D96AB6B1D9BC0 /* TargetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95F8A03E946C864547B5897 /* TargetApp.swift */; };
 		F558487992890AC96726C1D6 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0832F7D32F231109291B2 /* Service.framework */; platformFilter = ios; };
@@ -70,10 +73,12 @@
 		B7F421ED4D2FC471E4766016 /* Assets+WhoAreYou.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+WhoAreYou.swift"; sourceTree = "<group>"; };
 		D08D5D058893954DDB01CFE5 /* WhoAreYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoAreYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EDA2880EFEF86E8CE4DF23 /* WhoAreYouTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhoAreYouTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF43A58127F693EC000C73A2 /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; tabWidth = 4; };
 		DF44877827F2F9CA00EDD143 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		DF44877C27F2F9F400EDD143 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DF44877E27F312FC00EDD143 /* WhatsYourNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsYourNameView.swift; sourceTree = "<group>"; };
 		DF44878027F51DB400EDD143 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		DFAA872927F5BB1600896344 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		E59818D1FA29D3FD13194D6C /* WhoAreYouTest.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = WhoAreYouTest.plist; sourceTree = "<group>"; };
 		EEDE069E70D1B0BE8B93AF2A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F95F8A03E946C864547B5897 /* TargetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetApp.swift; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 			files = (
 				F558487992890AC96726C1D6 /* Service.framework in Frameworks */,
 				A2B870CB5B907CD86E01E0B8 /* ThirdPartyLib.framework in Frameworks */,
+				DF68E67C27FA748600D55C02 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +161,9 @@
 		62A7DCCD7444FF23B3402229 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DF43A58027F693B9000C73A2 /* ViewModel */,
 				0EE0128377E9E26AA378FDF1 /* App */,
+				DFAA872827F5BAEE00896344 /* Model */,
 				41A3142EBDB02693D6142581 /* View */,
 			);
 			path = Sources;
@@ -202,6 +210,14 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		DF43A58027F693B9000C73A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF43A58127F693EC000C73A2 /* SocketViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DF44877A27F2F9E200EDD143 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +240,14 @@
 				49DDE1AD34D16A713CACC651 /* TargetTest.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		DFAA872827F5BAEE00896344 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFAA872927F5BB1600896344 /* ChatModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E39BEC1E9C8106C00BB46C08 /* Project */ = {
@@ -267,6 +291,9 @@
 			dependencies = (
 			);
 			name = WhoAreYou;
+			packageProductDependencies = (
+				DF68E67B27FA748600D55C02 /* SocketIO */,
+			);
 			productName = WhoAreYou;
 			productReference = D08D5D058893954DDB01CFE5 /* WhoAreYou.app */;
 			productType = "com.apple.product-type.application";
@@ -312,6 +339,9 @@
 				en,
 			);
 			mainGroup = 5F4786A760855019580161A2;
+			packageReferences = (
+				DF68E67A27FA748600D55C02 /* XCRemoteSwiftPackageReference "socket" */,
+			);
 			productRefGroup = E4BC51CDF515B45C7673C52F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -348,12 +378,14 @@
 			files = (
 				9DB9CCC6D13CAFD0EBC672BE /* Assets+WhoAreYou.swift in Sources */,
 				DF44877927F2F9CA00EDD143 /* StartView.swift in Sources */,
+				DF43A58227F693EC000C73A2 /* SocketViewModel.swift in Sources */,
 				7A0709B4E40FD51C87934C62 /* Bundle+WhoAreYou.swift in Sources */,
 				DF44877F27F312FC00EDD143 /* WhatsYourNameView.swift in Sources */,
 				DF44878127F51DB400EDD143 /* ChatView.swift in Sources */,
 				E8F03229470D96AB6B1D9BC0 /* TargetApp.swift in Sources */,
 				DC0F212710CB0B8FC70FA3B9 /* ContentView.swift in Sources */,
 				DF44877D27F2F9F400EDD143 /* Color.swift in Sources */,
+				DFAA872A27F5BB1600896344 /* ChatModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +474,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Support/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,7 +575,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Support/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF68E67A27FA748600D55C02 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF68E67B27FA748600D55C02 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF68E67A27FA748600D55C02 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC81EBB5960EC9199DA2B4AA /* Project object */;
 }

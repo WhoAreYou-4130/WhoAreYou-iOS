@@ -18,7 +18,7 @@ struct StartView: View {
                 
                 Image("WhoAreYou-logo")
                 
-                Text("Who Are You 는 익명의 상대와\n 편하게 대화할 수 있는\n 익명 채팅 서비스 입니다.")
+                Text("Who Are You 는 **익명**의 상대와\n 편하게 대화할 수 있는\n **익명 채팅 서비스** 입니다.")
                     .frame(maxWidth: 375, maxHeight: 96)
                     .font(.title2)
                 //font 를 가운데로 정렬
@@ -48,6 +48,7 @@ struct StartView: View {
             }
 
         }
+        .navigationViewStyle(.stack)
         .padding()
     }
 }
