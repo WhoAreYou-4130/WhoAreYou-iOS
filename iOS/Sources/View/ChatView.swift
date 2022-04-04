@@ -11,7 +11,6 @@ import SwiftUI
 struct ChatView: View {
     
     @StateObject var viewModel = SocketViewModel()
-    @State var message : String = ""
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -31,8 +30,7 @@ struct ChatView: View {
                         .frame(maxWidth: .infinity, maxHeight: 28)
                     
                     Button {
-                        print("obsubmit!")
-                        viewModel.message = message
+                        
                     } label: {
                         Image(systemName: "paperplane")
                             .resizable()
@@ -60,6 +58,7 @@ struct ChatView: View {
                                 .onTapGesture {
                                     
                                     self.presentationMode.wrappedValue.dismiss()
+                                    
                                 }
                                 
                         }
