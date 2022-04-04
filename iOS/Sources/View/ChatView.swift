@@ -11,6 +11,7 @@ import SwiftUI
 struct ChatView: View {
     
     @StateObject var viewModel = SocketViewModel()
+    @State var message : String = ""
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -26,7 +27,7 @@ struct ChatView: View {
                 }
                 
                 HStack {
-                    TextEditor(text: $viewModel.message)
+                    TextEditor(text: $message)
                         .frame(maxWidth: .infinity, maxHeight: 28)
                     
                     Button {

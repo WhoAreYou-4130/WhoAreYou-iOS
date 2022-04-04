@@ -45,9 +45,9 @@ struct WhatsYourNameView: View {
                                 .frame(maxWidth: 67, maxHeight: 26)
                                 .foregroundColor(.white)
                             
-//                                .onTapGesture {
-//                                    print("최형우 = \(viewModel.yourName)")
-//                                }
+                            //                                .onTapGesture {
+                            //                                    print("최형우 = \(viewModel.yourName)")
+                            //                                }
                             
                         }
                     }
