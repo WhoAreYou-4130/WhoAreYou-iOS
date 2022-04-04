@@ -73,7 +73,7 @@
 		B7F421ED4D2FC471E4766016 /* Assets+WhoAreYou.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assets+WhoAreYou.swift"; sourceTree = "<group>"; };
 		D08D5D058893954DDB01CFE5 /* WhoAreYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoAreYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EDA2880EFEF86E8CE4DF23 /* WhoAreYouTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhoAreYouTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF43A58127F693EC000C73A2 /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; };
+		DF43A58127F693EC000C73A2 /* SocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketViewModel.swift; sourceTree = "<group>"; tabWidth = 4; };
 		DF44877827F2F9CA00EDD143 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		DF44877C27F2F9F400EDD143 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DF44877E27F312FC00EDD143 /* WhatsYourNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsYourNameView.swift; sourceTree = "<group>"; };
